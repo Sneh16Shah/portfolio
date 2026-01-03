@@ -38,7 +38,7 @@ const Skills = ({ recruiterMode }) => {
     );
 
     return (
-        <section id="skills" className="py-40 mt-20 relative overflow-hidden bg-slate-950/30" style={{ margin: "40px", padding: "50px" }}>
+        <section id="skills" className="py-40 mt-20 relative overflow-hidden bg-slate-950/30" style={{ marginTop: "40px", paddingTop: "50px" }}>
             <div className="container relative z-10 px-4">
                 {/* Section divider */}
                 <div className="w-full max-w-md mx-auto h-px bg-gradient-to-r from-transparent via-sky-500/20 to-transparent mb-20" />
@@ -51,7 +51,7 @@ const Skills = ({ recruiterMode }) => {
                     style={{ margin: "10px" }}
                 >
                     <span className="text-sky-500 font-black text-sm uppercase tracking-[0.3em] mb-4 block">Expertise</span>
-                    <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">Technical <span className="text-sky-400">Weaponry</span></h2>
+                    <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight">Technical <span className="text-sky-400">Weaponry</span></h2>
                 </motion.div>
 
                 {/* Infinite Carousel */}
@@ -76,14 +76,14 @@ const Skills = ({ recruiterMode }) => {
                 </div>
 
                 {/* Enhanced Achievement Cards */}
-                <div className="space-y-12 max-w-7xl mx-auto" style={{ margin: "70px", padding: "50px" }}>
-                    <div className="flex items-center gap-6 mb-12">
-                        <div className="h-[2px] flex-grow bg-gradient-to-r from-transparent to-white/10" />
-                        <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight flex items-center gap-4 shrink-0">
-                            <Award size={32} className="text-sky-500" /> Recognition & Rankings
+                <div className="space-y-12 max-w-7xl mx-auto" style={{ marginTop: "70px", paddingTop: "50px" }}>
+                    <div className="flex items-center gap-4 md:gap-6 mb-8 md:mb-12">
+                        <div className="hidden sm:block h-[1px] md:h-[2px] flex-grow bg-gradient-to-r from-transparent to-white/10" />
+                        <h3 className="text-xl md:text-3xl lg:text-4xl font-black text-white tracking-tight flex items-center justify-center gap-3 md:gap-4 mx-auto sm:mx-0 text-center sm:text-left">
+                            <Award className="text-sky-500 w-6 h-6 md:w-8 md:h-8 shrink-0" /> <span className="break-words">Recognition & Rankings</span>
                         </h3>
-                        <div className="h-[2px] flex-grow bg-gradient-to-l from-transparent to-white/10" />
-                    </div>
+                        <div className="hidden sm:block h-[1px] md:h-[2px] flex-grow bg-gradient-to-l from-transparent to-white/10" />
+                    </div>  
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {portfolioData.achievements.map((ach, i) => (
@@ -99,18 +99,18 @@ const Skills = ({ recruiterMode }) => {
                                     <ShieldCheck size={16} className="text-sky-400" />
                                 </div>
 
-                                <div className="flex flex-col h-full text-center">
-                                    <div className="flex items-center justify-center gap-2 mb-2">
-                                        <h4 className="text-xl font-black text-white group-hover:text-sky-400 transition-colors tracking-tight">
+                                <div className="flex flex-col h-full text-center p-2">
+                                    <div className="flex items-center justify-center gap-2 mb-3">
+                                        <h4 className="text-lg md:text-xl font-black text-white group-hover:text-sky-400 transition-colors tracking-tight leading-tight">
                                             {ach.title}
                                         </h4>
                                         {ach.link && (
-                                            <a href={ach.link} target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:text-sky-300 transition-colors">
+                                            <a href={ach.link} target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:text-sky-300 transition-colors shrink-0">
                                                 <ArrowUpRight size={18} />
                                             </a>
                                         )}
                                     </div>
-                                    <p className="text-slate-500 text-sm font-bold mb-4">{ach.rank}</p>
+                                    <p className="text-slate-500 text-xs md:text-sm font-bold mb-4">{ach.rank}</p>
                                     <p className="text-slate-400 text-xs leading-relaxed mt-auto pt-4 border-t border-white/5">{ach.description}</p>
                                 </div>
                             </motion.div>

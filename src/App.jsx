@@ -47,17 +47,17 @@ function App() {
       {/* Mobile Sticky Bottom Bar */}
       <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-sm">
         <div className="bg-slate-950/90 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-2 flex items-center gap-2 shadow-[0_30px_60px_rgba(0,0,0,0.8)]">
-          <a href={portfolioData.personal.resume} className="flex-1 bg-white text-black py-4 rounded-[1.5rem] font-black text-[10px] uppercase tracking-[0.2em] text-center flex items-center justify-center gap-2">
+          <a href={portfolioData.personal.resume} className="flex-1 bg-white text-black py-4 rounded-[1.5rem] font-black text-[10px] uppercase tracking-[0.2em] text-center flex items-center justify-center gap-2" style={{ color: "black" , padding: "10px"}}>
             <FileText size={16} strokeWidth={3} /> RESUME
           </a>
-          <a href="#contact" className="flex-1 bg-sky-500 text-white py-4 rounded-[1.5rem] font-black text-[10px] uppercase tracking-[0.2em] text-center flex items-center justify-center gap-2">
+          <a href="#contact" className="flex-1 bg-sky-500 text-white py-4 rounded-[1.5rem] font-black text-[10px] uppercase tracking-[0.2em] text-center flex items-center justify-center gap-2" style={{ color: "white" , padding: "10px"}}>
             <span className="w-1.5 h-1.5 bg-white rounded-full animate-ping" /> CONTACT
           </a>
         </div>
       </div>
 
       {/* Footer Branding */}
-      <footer className="py-40 border-t border-white/5 text-center px-4 relative overflow-hidden">
+      <footer className="py-40 border-t border-white/5 text-center px-4 relative overflow-hidden" style={{ marginTop: "40px", paddingTop: "50px" }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-sky-500/20 to-transparent" />
 
         <motion.div

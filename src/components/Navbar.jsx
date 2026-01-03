@@ -6,7 +6,6 @@ import { portfolioData } from '../data/portfolioData';
 const Navbar = ({ recruiterMode, setRecruiterMode }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [isResumeHovered, setIsResumeHovered] = useState(false);
     const { scrollYProgress } = useScroll();
     const scaleX = useSpring(scrollYProgress, {
         stiffness: 100,
@@ -88,13 +87,10 @@ const Navbar = ({ recruiterMode, setRecruiterMode }) => {
                         <a
                             href={portfolioData.personal.resume}
                             style={{
-                                backgroundColor: isResumeHovered ? '#305255ff' : '#232d31ff', // Sky-400 : Sky-500
-                                color: 'white',
-                                padding: '5px 5px'
+                                color: "black",
+                                padding: "10px"
                             }}
-                            onMouseEnter={() => setIsResumeHovered(true)}
-                            onMouseLeave={() => setIsResumeHovered(false)}
-                            className="hidden sm:flex items-center gap-2 rounded-xl text-xs font-black uppercase tracking-widest hover:scale-105 transition-all duration-300 shadow-xl"
+                            className="hidden sm:flex  bg-white items-center gap-2 rounded-xl text-xs font-black uppercase tracking-widest hover:scale-105 transition-all duration-300 shadow-xl"
                             target="_blank" rel="noopener noreferrer"
                         >
                             <FileText size={16} strokeWidth={3} /> <span>Resume</span>
@@ -116,6 +112,7 @@ const Navbar = ({ recruiterMode, setRecruiterMode }) => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         className="lg:hidden absolute top-24 left-4 right-4 p-8 glass-card border-white/10 text-center z-50 shadow-2xl overflow-hidden"
+                        style={{ "padding": "10px" }}
                     >
                         <div className="flex flex-col gap-6">
                             {navLinks.map((link) => (
@@ -129,15 +126,16 @@ const Navbar = ({ recruiterMode, setRecruiterMode }) => {
                                 </a>
                             ))}
                             <div className="pt-8 border-t border-white/10 flex flex-col gap-4">
-                                <button
+                                {/* <button
                                     onClick={() => { setRecruiterMode(!recruiterMode); setIsOpen(false); }}
                                     className={`flex items-center justify-center gap-2 py-5 rounded-2xl font-black uppercase tracking-widest transition-all ${recruiterMode ? 'bg-sky-500 text-white shadow-xl shadow-sky-500/20' : 'bg-white/10 text-slate-200'}`}
                                 >
                                     <Target size={20} /> {recruiterMode ? 'Recruiter Mode On' : 'Enable Recruiter Mode'}
-                                </button>
+                                </button> */}
                                 <a
                                     href={portfolioData.personal.resume}
                                     className="bg-sky-500 text-white py-5 rounded-2xl font-black uppercase tracking-widest flex items-center justify-center gap-2 shadow-2xl hover:bg-sky-400 transition-all"
+                                    // style={{ "marginBottom": "10px" }}
                                 >
                                     <FileText size={20} strokeWidth={3} /> Download Resume
                                 </a>

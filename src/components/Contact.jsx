@@ -5,7 +5,7 @@ import { portfolioData } from '../data/portfolioData';
 
 const Contact = ({ recruiterMode }) => {
     return (
-        <section id="contact" className="py-40 mt-20 relative overflow-hidden bg-slate-950/20" style={{ margin: "70px", padding: "50px" }}>
+        <section id="contact" className="py-40 mt-20 relative overflow-hidden bg-slate-950/20" style={{ marginTop: "40px", paddingTop: "50px" }}>
             {/* Footer Glow */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[400px] bg-sky-500/10 blur-[150px] -z-10" />
 

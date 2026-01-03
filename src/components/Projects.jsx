@@ -7,7 +7,7 @@ const Projects = ({ recruiterMode }) => {
     const [activeProject, setActiveProject] = useState(null);
 
     return (
-        <section id="projects" className="py-40 mt-32 relative bg-slate-900/10" style={{ margin: "40px", padding: "50px" }}>
+        <section id="projects" className="py-24 md:py-40 relative bg-slate-900/10" style={{ marginTop: "40px", paddingTop: "50px" }}>
             {/* Background Accent */}
             <div className="absolute top-1/2 left-0 w-full h-[500px] bg-sky-500/5 blur-[120px] -z-10" />
 
