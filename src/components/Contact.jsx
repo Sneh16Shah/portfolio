@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Send, ChevronRight, Calendar, MessageSquare, Twitter } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-const Contact = ({ recruiterMode }) => {
+const Contact = ({ theme }) => {
     return (
         <section id="contact" className="py-40 mt-20 relative overflow-hidden bg-slate-950/20" style={{ marginTop: "40px", paddingTop: "50px" }}>
             {/* Footer Glow */}

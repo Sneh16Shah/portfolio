@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 import { Award, ShieldCheck, ArrowUpRight } from 'lucide-react';
 
-const Skills = ({ recruiterMode }) => {
+const Skills = ({ theme }) => {
     // Flatten and deduplicate skills
     const allSkills = [
         ...portfolioData.skills.foundations,
@@ -33,7 +33,7 @@ const Skills = ({ recruiterMode }) => {
                 className="w-8 h-8 opacity-80"
                 onError={(e) => { e.target.style.display = 'none'; }} // Fallback if icon fails
             />
-            <span className="text-slate-200 font-bold text-lg">{skill.name}</span>
+            <span className={`${theme === 'light' ? 'text-slate-700' : 'text-slate-200'} font-bold text-lg`}>{skill.name}</span>
         </div>
     );
 
@@ -48,7 +48,7 @@ const Skills = ({ recruiterMode }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="text-center mb-20"
-                    style={{ margin: "10px" }}
+                    style={{ margin: "20px" }}
                 >
                     <span className="text-sky-500 font-black text-sm uppercase tracking-[0.3em] mb-4 block">Expertise</span>
                     <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight">Technical <span className="text-sky-400">Weaponry</span></h2>
@@ -56,8 +56,8 @@ const Skills = ({ recruiterMode }) => {
 
                 {/* Infinite Carousel */}
                 <div className="relative w-full overflow-hidden mask-linear-gradient mb-40">
-                    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#020617] to-transparent z-10" />
-                    <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#020617] to-transparent z-10" />
+                    <div className={`absolute inset-y-0 left-0 w-32 bg-gradient-to-r ${theme === 'light' ? 'from-slate-50' : 'from-[#020617]'} to-transparent z-10`} />
+                    <div className={`absolute inset-y-0 right-0 w-32 bg-gradient-to-l ${theme === 'light' ? 'from-slate-50' : 'from-[#020617]'} to-transparent z-10`} />
 
                     <motion.div
                         className="flex gap-6 w-max"
@@ -78,12 +78,12 @@ const Skills = ({ recruiterMode }) => {
                 {/* Enhanced Achievement Cards */}
                 <div className="space-y-12 max-w-7xl mx-auto" style={{ marginTop: "70px", paddingTop: "50px" }}>
                     <div className="flex items-center gap-4 md:gap-6 mb-8 md:mb-12">
-                        <div className="hidden sm:block h-[1px] md:h-[2px] flex-grow bg-gradient-to-r from-transparent to-white/10" />
+                        <div className="hidden sm:block h-[1px] md:h-[2px] flex-grow bg-gradient-to-r from-transparent to-white/10"  style={{ margin: "30px" }}/>
                         <h3 className="text-xl md:text-3xl lg:text-4xl font-black text-white tracking-tight flex items-center justify-center gap-3 md:gap-4 mx-auto sm:mx-0 text-center sm:text-left">
                             <Award className="text-sky-500 w-6 h-6 md:w-8 md:h-8 shrink-0" /> <span className="break-words">Recognition & Rankings</span>
                         </h3>
                         <div className="hidden sm:block h-[1px] md:h-[2px] flex-grow bg-gradient-to-l from-transparent to-white/10" />
-                    </div>  
+                    </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {portfolioData.achievements.map((ach, i) => (

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
-import { Menu, X, Rocket, Target, FileText } from 'lucide-react';
+import { Menu, X, Rocket, FileText, Sun, Moon } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-const Navbar = ({ recruiterMode, setRecruiterMode }) => {
+const Navbar = ({ theme, setTheme }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const { scrollYProgress } = useScroll();
@@ -70,18 +70,14 @@ const Navbar = ({ recruiterMode, setRecruiterMode }) => {
                     </div>
 
                     <div className="flex items-center gap-6">
-                        {/* Recruiter Mode Toggle */}
-                        {/* <button
-                            onClick={() => setRecruiterMode(!recruiterMode)}
-                            className={`
-                hidden md:flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-tighter transition-all shadow-lg
-                ${recruiterMode ? 'bg-sky-500 text-white shadow-sky-500/20' : 'bg-white/10 text-slate-200 border border-white/10 hover:bg-white/20'}
-              `}
-                            title="Toggle Recruiter Mode"
+                        {/* Theme Toggle */}
+                        <button
+                            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                            className="hidden md:flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 text-white border border-white/10 hover:bg-white/20 transition-all"
+                            title="Toggle Theme"
                         >
-                            <Target size={16} className={recruiterMode ? 'animate-pulse' : ''} />
-                            {recruiterMode ? 'Recruiter Mode On' : 'Recruiter Mode'}
-                        </button> */}
+                            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                        </button>
 
                         {/* Resume Button - Solid and High Contrast */}
                         <a
@@ -111,7 +107,7 @@ const Navbar = ({ recruiterMode, setRecruiterMode }) => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="lg:hidden absolute top-24 left-4 right-4 p-8 glass-card border-white/10 text-center z-50 shadow-2xl overflow-hidden"
+                        className="lg:hidden absolute top-24 left-4 right-4 p-8 bg-slate-950 border border-slate-800 border-white/10 text-center z-50 shadow-2xl overflow-hidden"
                         style={{ "padding": "10px" }}
                     >
                         <div className="flex flex-col gap-6">
@@ -126,16 +122,11 @@ const Navbar = ({ recruiterMode, setRecruiterMode }) => {
                                 </a>
                             ))}
                             <div className="pt-8 border-t border-white/10 flex flex-col gap-4">
-                                {/* <button
-                                    onClick={() => { setRecruiterMode(!recruiterMode); setIsOpen(false); }}
-                                    className={`flex items-center justify-center gap-2 py-5 rounded-2xl font-black uppercase tracking-widest transition-all ${recruiterMode ? 'bg-sky-500 text-white shadow-xl shadow-sky-500/20' : 'bg-white/10 text-slate-200'}`}
-                                >
-                                    <Target size={20} /> {recruiterMode ? 'Recruiter Mode On' : 'Enable Recruiter Mode'}
-                                </button> */}
+
                                 <a
                                     href={portfolioData.personal.resume}
                                     className="bg-sky-500 text-white py-5 rounded-2xl font-black uppercase tracking-widest flex items-center justify-center gap-2 shadow-2xl hover:bg-sky-400 transition-all"
-                                    // style={{ "marginBottom": "10px" }}
+                                // style={{ "marginBottom": "10px" }}
                                 >
                                     <FileText size={20} strokeWidth={3} /> Download Resume
                                 </a>

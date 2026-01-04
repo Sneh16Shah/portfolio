@@ -10,47 +10,27 @@ import { portfolioData } from './data/portfolioData';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
-  const [recruiterMode, setRecruiterMode] = useState(false);
+  const [theme, setTheme] = useState('dark'); // 'dark' or 'light'
 
   return (
-    <div className={`selection:bg-sky-500/30 transition-colors duration-500 ${recruiterMode ? 'recruiter-theme' : 'bg-[#000814]'}`}>
-      <Navbar recruiterMode={recruiterMode} setRecruiterMode={setRecruiterMode} />
+    <div className={`selection:bg-sky-500/30 transition-colors duration-500 ${theme === 'light' ? 'bg-[#F0FFFF]' : 'bg-[#000814]'}`} data-theme={theme}>
+      <Navbar theme={theme} setTheme={setTheme} />
 
-      <main className={`transition-all duration-500 ${recruiterMode ? 'max-w-6xl mx-auto px-4 md:px-0 pt-32 pb-32' : ''}`}>
-        <Hero recruiterMode={recruiterMode} />
-        <Experience recruiterMode={recruiterMode} />
-        <Projects recruiterMode={recruiterMode} />
-        <Skills recruiterMode={recruiterMode} />
-        <Contact recruiterMode={recruiterMode} />
+      <main className="transition-all duration-500">
+        <Hero theme={theme} />
+        <Experience theme={theme} />
+        <Projects theme={theme} />
+        <Skills theme={theme} />
+        <Contact theme={theme} />
       </main>
-
-      {/* Recruiter Mode Helper Badge */}
-      <AnimatePresence>
-        {recruiterMode && (
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 100 }}
-            className="fixed top-28 right-8 z-[100] hidden lg:block"
-          >
-            <div className="bg-sky-600 text-white px-6 py-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-sky-400/30">
-              <Target size={20} className="animate-pulse" />
-              <div className="flex flex-col">
-                <span className="text-xs font-black uppercase tracking-widest">Recruiter Mode Active</span>
-                <span className="text-[10px] font-bold opacity-80 leading-tight">Optimized for scanning & PDF export</span>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Mobile Sticky Bottom Bar */}
       <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-sm">
         <div className="bg-slate-950/90 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-2 flex items-center gap-2 shadow-[0_30px_60px_rgba(0,0,0,0.8)]">
-          <a href={portfolioData.personal.resume} className="flex-1 bg-white text-black py-4 rounded-[1.5rem] font-black text-[10px] uppercase tracking-[0.2em] text-center flex items-center justify-center gap-2" style={{ color: "black" , padding: "10px"}}>
+          <a href={portfolioData.personal.resume} className="flex-1 bg-white text-black py-4 rounded-[1.5rem] font-black text-[10px] uppercase tracking-[0.2em] text-center flex items-center justify-center gap-2" style={{ color: "black", padding: "10px" }}>
             <FileText size={16} strokeWidth={3} /> RESUME
           </a>
-          <a href="#contact" className="flex-1 bg-sky-500 text-white py-4 rounded-[1.5rem] font-black text-[10px] uppercase tracking-[0.2em] text-center flex items-center justify-center gap-2" style={{ color: "white" , padding: "10px"}}>
+          <a href="#contact" className="flex-1 bg-sky-500 text-white py-4 rounded-[1.5rem] font-black text-[10px] uppercase tracking-[0.2em] text-center flex items-center justify-center gap-2" style={{ color: "white", padding: "10px" }}>
             <span className="w-1.5 h-1.5 bg-white rounded-full animate-ping" /> CONTACT
           </a>
         </div>
@@ -74,7 +54,7 @@ function App() {
             Let's build something extraordinary together.
           </p>
 
-          <div className="flex justify-center gap-12 mb-16"style={{"margin":"20px"}}>
+          <div className="flex justify-center gap-12 mb-16" style={{ "margin": "20px" }}>
             {[
               { label: 'GITHUB', link: portfolioData.personal.github },
               { label: 'LINKEDIN', link: portfolioData.personal.linkedin },

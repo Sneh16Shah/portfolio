@@ -23,8 +23,8 @@
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Recruiter Mode Refinements */
-.recruiter-theme {
+/* Light Mode Theme */
+[data-theme='light'] {
     --bg-dark: #fcfdfe;
     --text-primary: #0f172a;
     --text-secondary: #334155;
@@ -35,30 +35,85 @@
     --accent-primary: #0369a1;
     /* Darker blue for light theme contrast */
     --accent-secondary: #4338ca;
+
+    color: var(--text-primary);
 }
 
-.recruiter-theme body::before {
+[data-theme='light'] body::before {
     display: none;
 }
 
-/* Disable heavy gradients in recruiter mode */
-.recruiter-theme span.text-transparent {
-    background: none !important;
-    -webkit-text-fill-color: initial !important;
-    color: var(--accent-primary) !important;
-    font-weight: 800 !important;
+/* Light Mode - Comprehensive Background Overrides */
+[data-theme='light'] section {
+    background-color: transparent !important;
 }
 
-.recruiter-theme h1,
-.recruiter-theme h2,
-.recruiter-theme h3 {
-    letter-spacing: -0.02em !important;
-    line-height: 1.2 !important;
+[data-theme='light'] .bg-slate-950,
+[data-theme='light'] .bg-slate-950\/20,
+[data-theme='light'] .bg-slate-900,
+[data-theme='light'] .bg-slate-900\/10,
+[data-theme='light'] .bg-slate-900\/50 {
+    background-color: transparent !important;
 }
 
-.recruiter-theme p {
-    line-height: 1.8 !important;
-    font-weight: 500 !important;
+[data-theme='light'] .glass-card {
+    background: #eafffe !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+}
+
+[data-theme='light'] .text-white {
+    color: #0f172a !important;
+}
+
+[data-theme='light'] .text-slate-400,
+[data-theme='light'] .text-slate-500 {
+    color: #475569 !important;
+}
+
+[data-theme='light'] .text-slate-300 {
+    color: #334155 !important;
+}
+
+[data-theme='light'] .border-white\/5,
+[data-theme='light'] .border-white\/10 {
+    border-color: #e2e8f0 !important;
+}
+
+[data-theme='light'] .bg-white\/5,
+[data-theme='light'] .bg-white\/10,
+[data-theme='light'] .bg-white\/\[0\.01\],
+[data-theme='light'] .bg-white\/\[0\.02\] {
+    background-color: #eafffe !important;
+}
+
+/* Navbar Light Mode */
+[data-theme='light'] nav .bg-slate-950\/80,
+[data-theme='light'] nav .bg-white\/5 {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-color: #e2eff0 !important;
+}
+
+[data-theme='light'] nav .text-slate-400 {
+    color: #64748b !important;
+}
+
+[data-theme='light'] nav .text-slate-400:hover {
+    color: #0369a1 !important;
+}
+
+/* Fix Tech Stack Tags in Light Mode */
+[data-theme='light'] .text-slate-100 {
+    color: #475569 !important;
+    /* Slate-600 */
+}
+
+
+
+/* Footer Light Mode */
+[data-theme='light'] footer {
+    background-color: #d9eeed !important;
+    border-color: #e2e8f0 !important;
 }
 
 * {

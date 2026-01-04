@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring, AnimatePresence } from 'framer-motio
 import { portfolioData } from '../data/portfolioData';
 import { Download, Sparkles, Brain } from 'lucide-react';
 
-const Hero = ({ recruiterMode }) => {
+const Hero = ({ theme }) => {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
     const [isHeroResumeHovered, setIsHeroResumeHovered] = useState(false);
@@ -24,7 +24,7 @@ const Hero = ({ recruiterMode }) => {
     return (
         <section id="about" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-32">
             {/* Interactive Spotlight */}
-            {!recruiterMode && (
+            {theme === 'dark' && (
                 <motion.div
                     className="pointer-events-none absolute inset-0 z-30 transition-opacity duration-300"
                     style={{
@@ -58,6 +58,7 @@ const Hero = ({ recruiterMode }) => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="flex flex-col items-center gap-6 mb-12"
+                        style={{ "margin": "30px" }}
                     >
                         <p className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-4xl mx-auto font-medium">
                             Software Engineer with 2 year experience building scalable, high-performance distributed systems across fintech and cloud platforms. Currently working at Coinbase, where I design and optimize Kafka-based pipelines, GraphQL services, and observability-driven systems supporting large-scale user workflows. I enjoy solving complex backend problems, improving system reliability, and building production-ready solutions that scale to millions of users.
@@ -86,7 +87,7 @@ const Hero = ({ recruiterMode }) => {
                         >
                             <Download size={24} strokeWidth={3} /> <span>📄 Download Resume (PDF)</span>
                         </motion.a>
-{/* 
+                        {/* 
                         <motion.a
                             href="#projects"
                             whileHover={{ scale: 1.05, y: -2 }}
@@ -105,7 +106,7 @@ const Hero = ({ recruiterMode }) => {
             </div>
 
             {/* Background Decorative Ethereal Glows */}
-            {!recruiterMode && (
+            {theme === 'dark' && (
                 <>
                     <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-sky-500/10 blur-[120px] rounded-full -z-10 animate-pulse"></div>
                     <div className="absolute bottom-[0%] right-[-10%] w-[50%] h-[50%] bg-indigo-500/10 blur-[120px] rounded-full -z-10"></div>
