@@ -75,6 +75,13 @@ export const portfolioData = {
   ],
   projects: [
     {
+      title: "AskMyPDF",
+      description: "AI-powered PDF assistant with a Chrome extension, streaming chat, and session management — built with a Go backend, React frontend, and Dockerized PostgreSQL.",
+      tech: ["Golang", "React", "TypeScript", "PostgreSQL", "Docker", "Chrome Extension"],
+      link: "https://ai-pdf-assistant-z6lh.onrender.com/",
+      github: "https://github.com/Sneh16Shah/ai-pdf-assistant"
+    },
+    {
       title: "RailView",
       description: "Full-stack railway review platform with robust authentication, authorization, and CRUD features.",
       tech: ["React", "Node.js", "Express", "MongoDB"],

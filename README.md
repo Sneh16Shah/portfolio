@@ -1,16 +1,71 @@
-# React + Vite
+# Sneh's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive developer portfolio built with React and Vite, featuring smooth animations powered by Framer Motion.
 
-Currently, two official plugins are available:
+## 🛠 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** — UI framework
+- **Vite (Rolldown)** — Lightning-fast build tool
+- **Tailwind CSS 4** — Utility-first styling
+- **Framer Motion** — Animations and transitions
+- **Recharts** — Data visualizations
+- **Lucide React** — Icon library
 
-## React Compiler
+## 🚀 Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the ESLint configuration
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- npm (comes with Node.js)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Sneh16Shah/portfolio.git
+cd portfolio
+
+# Install dependencies
+npm install
+```
+
+### Running Locally
+
+```bash
+npm run dev
+```
+
+The app will be available at [http://localhost:5173](http://localhost:5173).
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## 📁 Project Structure
+
+```
+normal-portfolio/
+├── public/              # Static assets
+├── src/
+│   ├── components/      # React components
+│   ├── data/            # Portfolio data (experience, projects, skills)
+│   ├── styles/          # CSS stylesheets
+│   └── App.jsx          # Root application component
+├── index.html           # Entry HTML
+├── vite.config.js       # Vite configuration
+└── package.json
+```

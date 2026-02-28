@@ -22,7 +22,7 @@ const Hero = ({ theme }) => {
     }, []);
 
     return (
-        <section id="about" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-32">
+        <section id="about" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-40 pb-32 md:py-32" style={{ "paddingTop": "100px" }}>
             {/* Interactive Spotlight */}
             {theme === 'dark' && (
                 <motion.div

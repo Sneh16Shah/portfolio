@@ -70,10 +70,10 @@ const Navbar = ({ theme, setTheme }) => {
                     </div>
 
                     <div className="flex items-center gap-6">
-                        {/* Theme Toggle */}
+                        {/* Theme Toggle — visible on all screen sizes */}
                         <button
                             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                            className="hidden md:flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 text-white border border-white/10 hover:bg-white/20 transition-all"
+                            className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 text-white border border-white/10 hover:bg-white/20 transition-all"
                             title="Toggle Theme"
                         >
                             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
@@ -107,8 +107,8 @@ const Navbar = ({ theme, setTheme }) => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="lg:hidden absolute top-24 left-4 right-4 p-8 bg-slate-950 border border-slate-800 border-white/10 text-center z-50 shadow-2xl overflow-hidden"
-                        style={{ "padding": "10px" }}
+                        className="lg:hidden absolute top-24 left-4 right-4 p-8 border border-white/10 text-center z-50 shadow-2xl overflow-hidden rounded-2xl"
+                        style={{ padding: "10px", backgroundColor: theme === 'dark' ? '#020617' : '#ffffff' }}
                     >
                         <div className="flex flex-col gap-6">
                             {navLinks.map((link) => (
