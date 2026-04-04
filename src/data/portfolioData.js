@@ -9,7 +9,7 @@ export const portfolioData = {
     github: "https://github.com/Sneh16Shah",
     linkedin: "https://www.linkedin.com/in/snehshah16/",
     twitter: "https://x.com/SnehShah1675",
-    resume: "https://drive.google.com/file/d/1kEyDaOi5VfsX28laJWlBSc9pCEVkYlv7/view?usp=sharing"
+    resume: "https://drive.google.com/file/d/1FHS_h0fIsD39c-jpQY61YRW57Q787Kbb/view?usp=sharing"
   },
   experience: [
     {
