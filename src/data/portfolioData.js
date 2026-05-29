@@ -75,6 +75,13 @@ export const portfolioData = {
   ],
   projects: [
     {
+      title: "AskMyPDF",
+      description: "AI-powered PDF assistant with multi-document sessions, streaming responses, page citations, and an enterprise RAG pipeline. Features a Go backend (Clean Architecture), React frontend, Chrome Extension (Manifest V3), and multi-provider AI fallback (Gemini → Groq → Puter AI). Includes hybrid search (BM25 + dense embeddings), reranking, vision-based chart/diagram analysis, and on-demand image generation. Containerized with Docker Compose and deployed on Render.",
+      tech: ["Golang", "React", "TypeScript", "PostgreSQL", "Docker", "Gemini AI", "NVIDIA NIM", "Groq", "Chrome Extension"],
+      link: "https://ai-pdf-assistant-z6lh.onrender.com",
+      github: "https://github.com/Sneh16Shah/ai-pdf-assistant"
+    },
+    {
       title: "RailView",
       description: "Full-stack railway review platform with robust authentication, authorization, and CRUD features.",
       tech: ["React", "Node.js", "Express", "MongoDB"],
